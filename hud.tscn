@@ -1,0 +1,61 @@
+[gd_scene load_steps=5 format=3 uid="uid://cm6ek4v8vhmxj"]
+
+[ext_resource type="Script" uid="uid://38byo11e0swm" path="res://hud.gd" id="1_64ctp"]
+[ext_resource type="FontFile" uid="uid://dlj5n71h3vt3u" path="res://dodge_the_creeps_2d_assets/dodge_the_creeps_2d_assets/fonts/Xolonium-Regular.ttf" id="2_8sq4i"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_640wx"]
+font = ExtResource("2_8sq4i")
+font_size = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_a2258"]
+font = ExtResource("2_8sq4i")
+font_size = 25
+font_color = Color(0.943116, 0.46099, 0.589063, 1)
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_64ctp")
+
+[node name="scoreLabel" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -32.5
+offset_right = 32.5
+offset_bottom = 78.0
+grow_horizontal = 2
+text = "0 "
+label_settings = SubResource("LabelSettings_640wx")
+
+[node name="message" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -15.5
+offset_right = 240.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Dodge the Creeps!"
+label_settings = SubResource("LabelSettings_a2258")
+autowrap_mode = 2
+
+[node name="startButton" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = 220.0
+offset_right = 100.0
+offset_bottom = 320.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "start"
+
+[node name="messagerTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
